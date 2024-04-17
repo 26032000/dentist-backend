@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors= require('cors');
 
 const dentistRoutes = require('./routes/dentistRoutes');
 const patientRoutes = require('./routes/patientRoutes');
@@ -28,7 +29,7 @@ mongoose.connect(connectionString)
 });
 // Middleware
 app.use(express.json());
-
+app.use(cors());
 // Routes
 app.use('/api/dentists', dentistRoutes);
 app.use('/api/patients', patientRoutes);
