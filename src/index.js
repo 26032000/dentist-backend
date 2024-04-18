@@ -9,7 +9,9 @@ const treatmentRoutes = require('./routes/treatmentRoute');
 const faqRoute=require('./routes/faqRoutes');
 const inventoryRoute = require('./routes/inventoryRoutes');
 const userRoutes=require('./routes/userRoutes');
+
 const errorHandler = require('./middleware/errorhandler');
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -38,6 +40,7 @@ app.use('/api/treatments', treatmentRoutes);
 app.use('/api/faqs',faqRoute);
 app.use('/api/inventory', inventoryRoute);
 app.use('/auth', userRoutes);
+
 app.use(errorHandler);
 
 // Error handling middleware

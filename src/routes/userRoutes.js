@@ -12,6 +12,7 @@ router.post('/register', userController.registerUser);
 // Login user
 router.post('/login', userController.loginUser);
 router.post('/reset-password', resetPassword);
+router.post('/logout', userController.logout);
 router.get('/profile', authenticateToken, (req, res) => {
   res.json(req.user);
 });
